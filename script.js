@@ -13,7 +13,9 @@ filterButtons.forEach((button) => {
 });
 
 function updateActiveButton(newButton) {
-  // find the previously active button
-  // & remove the active class from it
+  // find the previously active button & remove the active class from it
+  filterList.querySelector('.active').classList.remove('active');
+
   // add active class to our new button
+  newButton.classList.add('active');
 }
