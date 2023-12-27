@@ -4,11 +4,14 @@ const conferences = document.querySelectorAll('.conference');
 
 filterButtons.forEach((button) => {
   button.addEventListener('click', (e) => {
+    const filter = e.target.getAttribute('data-filter');
+    // console.log(filter);
+
     // change the active button
     updateActiveButton(e.target);
 
     // filter the list
-    // filterEvents();
+    filterEvents(filter);
   });
 });
 
@@ -19,3 +22,5 @@ function updateActiveButton(newButton) {
   // add active class to our new button
   newButton.classList.add('active');
 }
+
+function filterEvents() {}
