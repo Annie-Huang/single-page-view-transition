@@ -7,6 +7,12 @@ filterButtons.forEach((button) => {
     const filter = e.target.getAttribute('data-filter');
     // console.log(filter);
 
+    // Add the fall back:
+    if (!document.startViewTransition) {
+      updateActiveButton(e.target);
+      filterConf(filter);
+    }
+
     // Not supported in safari and firefox
     // This add in the fade in | fade out of the page content when you click different button to switch the tab
     // Both the button and the tab and the side bar below (mobile view) will fade in | fade out.
