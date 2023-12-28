@@ -11,7 +11,7 @@ filterButtons.forEach((button) => {
     updateActiveButton(e.target);
 
     // filter the list
-    filterEvents(filter);
+    filterConf(filter);
   });
 });
 
@@ -23,4 +23,18 @@ function updateActiveButton(newButton) {
   newButton.classList.add('active');
 }
 
-function filterEvents() {}
+function filterConf(confFilter) {
+  // get each conference category
+  conferences.forEach((conf) => {
+    const confCategory = conf.getAttribute('data-category');
+
+    // check if that category matches the filter
+    if (confFilter === confCategory) {
+      // if it matches, show that conf
+      conf.removeAttribute('hidden');
+    } else {
+      // if not, hide that conf
+      conf.setAttribute('hidden', '');
+    }
+  });
+}
