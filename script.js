@@ -7,11 +7,16 @@ filterButtons.forEach((button) => {
     const filter = e.target.getAttribute('data-filter');
     // console.log(filter);
 
-    // change the active button
-    updateActiveButton(e.target);
+    // Not supported in safari and firefox
+    // This add in the fade in | fade out of the page content when you click different button to switch the tab
+    // Both the button and the tab and the side bar below (mobile view) will fade in | fade out.
+    document.startViewTransition(() => {
+      // change the active button
+      updateActiveButton(e.target);
 
-    // filter the list
-    filterConf(filter);
+      // filter the list
+      filterConf(filter);
+    });
   });
 });
 
