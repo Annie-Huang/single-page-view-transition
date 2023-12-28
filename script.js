@@ -29,7 +29,7 @@ function filterConf(confFilter) {
     const confCategory = conf.getAttribute('data-category');
 
     // check if that category matches the filter
-    if (confFilter === confCategory) {
+    if (confFilter === 'all' || confFilter === confCategory) {
       // if it matches, show that conf
       conf.removeAttribute('hidden');
     } else {
