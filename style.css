@@ -173,6 +173,7 @@ body {
   padding: 0;
 }
 
+/* Start css selector */
 .conference:not(:last-child):not(:has(+ [hidden])) {
   padding-bottom: 2rem;
   margin-bottom: 2rem;

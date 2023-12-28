@@ -4,3 +4,8 @@ https://codepen.io/kevinpowell/pen/GRzxybd/c5c073666a8225c2c8f2fadd4d7c049b?edit
 https://github.com/Annie-Huang/single-page-view-transition
 
 --------------------------------------------------------------------------
+
+This is a very good selector:
+.conference:not(:last-child):not(:has(+ [hidden])) {..}
+
+meaning any .conference that is not a last child, and also don't have a sibling (the '+' symbol) that of the [hidden] attribute
