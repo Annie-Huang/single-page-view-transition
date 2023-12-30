@@ -2,6 +2,15 @@ const filterList = document.querySelector('.filter');
 const filterButtons = filterList.querySelectorAll('.filter-btn');
 const conferences = document.querySelectorAll('.conference');
 
+let conferenceIndex = 0;
+
+// This will see each <li> has change position in the height, and since it got individual 'view-transition-name' property.
+// it will do animation on individual <li> as well, so it create the collapse | open effect.
+conferences.forEach((conference) => {
+  // Add like this: <li class="conference" data-category="fullstack" style="view-transition-name: conf-1;">
+  conference.style.viewTransitionName = `conf-${++conferenceIndex}`;
+});
+
 filterButtons.forEach((button) => {
   button.addEventListener('click', (e) => {
     const filter = e.target.getAttribute('data-filter');
